@@ -10,10 +10,7 @@ function EventsItemComponent({ title, description, image, slug }) {
       <a>
         <div className={styles.blogItem}>
           <div className={styles.image}>
-            <img
-              src={`/api/events-images/${slug}/${image}`}
-              layout="responsive"
-            />
+            <Image src={image} width={650} height={400} />
           </div>
           <div className={styles.content}>
             <h2>{title}</h2>

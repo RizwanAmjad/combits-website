@@ -1,3 +1,8 @@
+# Combits Website being Developed by GDSC
+
+1. Rizwan Amjad (AI/ML Lead)
+2. Hamza (Mobile App Development Team Member)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

@@ -8,7 +8,9 @@ function NavComponent(props) {
     <nav className={styles.nav}>
       <Link href="/">
         <a>
-          <div className="logo">Logo Image</div>
+          <div>
+            <img src={"/site/combits-logo.png"} className={styles.logo} />
+          </div>
         </a>
       </Link>
       <div className={styles.navItems}>

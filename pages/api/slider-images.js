@@ -1,11 +1,10 @@
 import nc from "next-connect"
-
 import { v2 as cloudinary } from "cloudinary"
 
 import fileUpload from "../../middleware/fileUpload"
 import dbConnect from "../../lib/dbConnect"
 
-import Event from "../../models/events"
+import SliderImage from "../../models/slider-images"
 
 dbConnect()
 
@@ -22,26 +21,16 @@ const handler = nc({
 handler.use(fileUpload)
 
 handler.post(async (req, res) => {
-  let event = new Event(req.body)
+  let sliderImage = new SliderImage(req.body)
   try {
-    // uploading content markdown file
-    const { url: content } = await cloudinary.uploader.upload(
-      req.files.content[0].path,
-      {
-        folder: "/event-content",
-        resource_type: "raw",
-      }
-    )
-    event.content = content
-
     // uploading event images
     const { url: image } = await cloudinary.uploader.upload(
       req.files.image[0].path,
-      { folder: "/event-images" }
+      { folder: "/slider-images" }
     )
-    event.image = image
+    sliderImage.image = image
 
-    return res.status(200).json(await event.save())
+    return res.status(200).json(await sliderImage.save())
   } catch (err) {
     return res.status(400).json(err)
   }

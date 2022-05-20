@@ -1,0 +1,13 @@
+.title {
+  text-align: center;
+}
+
+.image {
+  border-radius: 20px;
+  height: 250px;
+  overflow: hidden;
+}
+
+.image img {
+  object-fit: cover;
+}

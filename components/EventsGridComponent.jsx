@@ -9,9 +9,9 @@ function EventsGridComponent({ events }) {
     <div className={styles.blogGrid}>
       {events.map((event) => (
         <EventsItemComponent
-          key={event.slug}
+          key={event._id}
           description={event.description}
-          // image={`${event.image}`}
+          image={`${event.image}`}
           slug={event.slug}
           title={event.title}
         />
